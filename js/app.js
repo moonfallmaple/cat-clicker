@@ -1,3 +1,4 @@
+/*
 let kitty = document.querySelector('.kitty');
 let mitty = document.querySelector('.mitty');
 let kittyCounter = 0;
@@ -14,3 +15,4 @@ mitty.addEventListener('click', () => {
 	mittyCounter++;
 	mittyNumber.innerHTML = mittyCounter;
 }, false);
+*/
