@@ -1,8 +1,16 @@
-const cat = document.getElementById('kitty');
-let clickCounter = 0;
+let kitty = document.querySelector('.kitty');
+let mitty = document.querySelector('.mitty');
+let kittyCounter = 0;
+let mittyCounter = 0;
 
-cat.addEventListener('click', () => { 
-	let numberOfClicks = document.querySelector('.click-number');
-	clickCounter++;
-	numberOfClicks.innerHTML = clickCounter;
+kitty.addEventListener('click', () => { 
+	let kittyNumber = document.querySelector('.kitty-number');
+	kittyCounter++;
+	kittyNumber.innerHTML = kittyCounter;
+}, false);
+
+mitty.addEventListener('click', () => { 
+	let mittyNumber = document.querySelector('.mitty-number');
+	mittyCounter++;
+	mittyNumber.innerHTML = mittyCounter;
 }, false);

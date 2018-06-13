@@ -1,7 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
-	font: 30px 'Work Sans', sans-serif;
+	font: 1.3em 'Work Sans', sans-serif;
 }
 
 .container {
+	text-align: center
+}
+
+h3 {
 	text-align: center;
+	margin: 20px;
+	font-size: 30px;
+}
+
+ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	width: 90%;
 }
