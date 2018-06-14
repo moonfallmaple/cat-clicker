@@ -30,6 +30,16 @@ for (let i = 0; i < cats.length; i++) {
 
 	catName.addEventListener('click', (function(catCopy) {
 		 return function() {
+		 	let catImg = document.createElement('img');
+		 	catImg.src = 'img/Kitty.jpeg';
+
+		 	let catName = document.createElement('h3');
+		 	catName.innerHTML = catCopy;
+
+		 	let catDisplay = document.querySelector('.cat-display');
+		 	catDisplay.appendChild(catImg);
+		 	catDisplay.appendChild(catName);
+		 	
 		 	console.log(catCopy);
 		 };
 	})(cat));
