@@ -27,21 +27,33 @@ for (let i = 0; i < cats.length; i++) {
 	catName.innerHTML = cat;
 	catContainer.appendChild(catName);
 
+ 	let catDisplay = document.querySelector('.cat-display');
+	let clickNumber = document.querySelector('.click-number');
 
-	catName.addEventListener('click', (function(catCopy) {
-		 return function() {
+
+	catName.addEventListener('click', (function(e) {
+		return function(e) {
+		 	let images = ['img/Kitty.jpeg', 'img/Mitty.jpeg', 'img/Finny.jpeg', 'img/Lilly.jpeg', 'img/Vinny.jpeg', 'img/Zizzy.jpeg'];
 		 	let catImg = document.createElement('img');
-		 	catImg.src = 'img/Kitty.jpeg';
+		 	catImg.src = images[0];
 
 		 	let catName = document.createElement('h3');
-		 	catName.innerHTML = catCopy;
+		 	catName.innerHTML = cat;
 
-		 	let catDisplay = document.querySelector('.cat-display');
 		 	catDisplay.appendChild(catImg);
 		 	catDisplay.appendChild(catName);
-		 	
-		 	console.log(catCopy);
-		 };
+		 	console.log(e);
+		};
 	})(cat));
 
+	catDisplay.addEventListener('click', (function(e) {
+		let clickCounter = 0;
+
+		return function(e) {
+		 	clickCounter++;
+
+		 	clickNumber.innerHTML = clickCounter;		 	
+		 	console.log(e);
+		};
+	})(cat));
 };
