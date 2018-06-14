@@ -16,3 +16,22 @@ mitty.addEventListener('click', () => {
 	mittyNumber.innerHTML = mittyCounter;
 }, false);
 */
+
+let cats = ['Kitty', 'Mitty', 'Finny', 'Lilly', 'Vinny', 'Zizzy'];
+
+for (let i = 0; i < cats.length; i++) {
+	let cat = cats[i];
+
+	let catContainer = document.querySelector('.cat-list');
+	let catName = document.createElement('li');
+	catName.innerHTML = cat;
+	catContainer.appendChild(catName);
+
+
+	catName.addEventListener('click', (function(catCopy) {
+		 return function() {
+		 	console.log(catCopy);
+		 };
+	})(cat));
+
+};
