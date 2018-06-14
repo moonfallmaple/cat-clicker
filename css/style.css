@@ -31,11 +31,16 @@ li:hover {
 
 .cat-display {
 	max-width: 500px;
-	height: 500px;
+	height: 365px;
 	border: 1px solid #CCCCCC;
+	padding: 10px 10px 8px;
 	margin: 0 auto;
 }
 
 .container p {
 	margin-top: 10px;
+}
+
+img {
+	width: 100%;
 }
