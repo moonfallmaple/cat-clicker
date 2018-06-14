@@ -1,59 +1,51 @@
-/*
-let kitty = document.querySelector('.kitty');
-let mitty = document.querySelector('.mitty');
-let kittyCounter = 0;
-let mittyCounter = 0;
-
-kitty.addEventListener('click', () => { 
-	let kittyNumber = document.querySelector('.kitty-number');
-	kittyCounter++;
-	kittyNumber.innerHTML = kittyCounter;
-}, false);
-
-mitty.addEventListener('click', () => { 
-	let mittyNumber = document.querySelector('.mitty-number');
-	mittyCounter++;
-	mittyNumber.innerHTML = mittyCounter;
-}, false);
-*/
-
 let cats = ['Kitty', 'Mitty', 'Finny', 'Lilly', 'Vinny', 'Zizzy'];
+let images = ['img/Kitty.jpeg', 'img/Mitty.jpeg', 'img/Finny.jpeg', 'img/Lilly.jpeg', 'img/Vinny.jpeg', 'img/Zizzy.jpeg'];
 
 for (let i = 0; i < cats.length; i++) {
 	let cat = cats[i];
+	let image = images[i];
+	let clickCounter = 0;
 
+	// Create list of cats
 	let catContainer = document.querySelector('.cat-list');
-	let catName = document.createElement('li');
-	catName.innerHTML = cat;
-	catContainer.appendChild(catName);
+	let catListItem = document.createElement('li');
+	catListItem.innerHTML = cat;
+	catContainer.appendChild(catListItem);
 
+	// Display of the images
  	let catDisplay = document.querySelector('.cat-display');
+
 	let clickNumber = document.querySelector('.click-number');
 
-
-	catName.addEventListener('click', (function(e) {
+	// Click event for each cat
+	catListItem.addEventListener('click', (function(e) {
 		return function(e) {
-		 	let images = ['img/Kitty.jpeg', 'img/Mitty.jpeg', 'img/Finny.jpeg', 'img/Lilly.jpeg', 'img/Vinny.jpeg', 'img/Zizzy.jpeg'];
-		 	let catImg = document.createElement('img');
-		 	catImg.src = images[0];
+			// Clean display for new cat
+			catDisplay.innerHTML = "";
 
+			// Add specific image
+		 	let catImg = document.createElement('img');
+		 	catImg.src = image;
+
+		 	// Add specific name
 		 	let catName = document.createElement('h3');
 		 	catName.innerHTML = cat;
 
+		 	// Attach specific image and name to the Display Area 
 		 	catDisplay.appendChild(catImg);
 		 	catDisplay.appendChild(catName);
-		 	console.log(e);
-		};
-	})(cat));
 
-	catDisplay.addEventListener('click', (function(e) {
-		let clickCounter = 0;
-
-		return function(e) {
-		 	clickCounter++;
-
+		 	// Attach specific counter of the cat to the HTML.
+		 	// Retains last number of click.
 		 	clickNumber.innerHTML = clickCounter;		 	
-		 	console.log(e);
+
+		 	// Click event for each image of specific cat
+			catImg.addEventListener('click', (function(e) {
+				return function(e) {
+				 	clickCounter++;
+				 	clickNumber.innerHTML = clickCounter;		 	
+				};
+			})(cat));
 		};
 	})(cat));
 };
